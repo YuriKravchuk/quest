@@ -90,7 +90,7 @@
                     <button name="action" value="TRADE_WEAPON">Купити зброю</button>
                 </c:if>
                 <c:if test="${game.getCurrentLocation().isKnowsExit()}">
-                    <button name="action" value="SHOW_EXIT">Запитати про вихід з печери</button>
+                    <button name="action" value="SHOW_EXIT">Запитати про вихід з лісу</button>
                 </c:if>
                 <button name="action" value="STOP_TALKING">Закінчити розмову</button>
             </c:if>
