@@ -30,12 +30,12 @@ public class CaveLocation extends Location {
     public CaveLocation() {
         this.type = ObjectType.CAVE;
         Random rand = new Random();
-        int chance = rand.nextInt(100); // Генерує число від 0 до 99
+        int chance = rand.nextInt(100);
 
         // 40% шанс на наявність монстра
         if (chance < 40) {
             this.hasMonster = true;
-            this.monster = new Monster();  // Ініціалізація монстра з початковим здоров'ям
+            this.monster = new Monster();
         }
         // 30% шанс на наявність скарбу
         else if (chance < 70) {
@@ -67,20 +67,20 @@ public class CaveLocation extends Location {
     public InteractionResult enterCave(Player player) {
         player.setInCave(true);
         if (hasMonster) {
-            return InteractionResult.MONSTER_PRESENT;  // Якщо є монстр, повідомляємо про це
+            return InteractionResult.MONSTER_PRESENT;
         } else if (hasTreasure) {
-            return takeTreasure(player);  // Якщо є скарб
+            return takeTreasure(player);
         } else if (hasWeapon) {
-            return takeWeapon(player);  // Якщо є зброя
+            return takeWeapon(player);
         }
-        return InteractionResult.NO_MONSTER;  // Якщо немає монстра
+        return InteractionResult.NO_MONSTER;
     }
 
     public InteractionResult fightMonster(Player player) {
         if (hasMonster) {
             // Якщо в гравця є зброя, він завдає 25% пошкодження, якщо немає зброї — 5%
             int damage = player.hasWeapon() ? 25 : 5;
-            monster.decreaseHealth(damage);  // Зменшуємо здоров'я монстра на відповідну кількість
+            monster.decreaseHealth(damage);
             player.decreaseHealth(10);
             // Повертаємо результат бою
             if (monster.isAlive()) {
@@ -101,7 +101,7 @@ public class CaveLocation extends Location {
 
     public InteractionResult leaveCave(Player player) {
         player.setInCave(false);
-        return InteractionResult.CAVE_EXITED;  // Вихід з печери
+        return InteractionResult.CAVE_EXITED;
     }
 
     public InteractionResult fleeFromMonster(Player player) {
@@ -113,8 +113,8 @@ public class CaveLocation extends Location {
     // Метод для взяття скарбу
     private InteractionResult takeTreasure(Player player) {
         if (hasTreasure) {
-            player.setTreasure(true);  // Гравець отримує скарб
-            this.hasTreasure = false;  // Скарб забрано
+            player.setTreasure(true);
+            this.hasTreasure = false;
             return InteractionResult.TREASURE_FOUND;
         }
         return InteractionResult.NO_MONSTER;
@@ -123,8 +123,8 @@ public class CaveLocation extends Location {
     // Метод для взяття зброї
     private InteractionResult takeWeapon(Player player) {
         if (hasWeapon) {
-            player.setWeapon(true);  // Гравець отримує зброю
-            this.hasWeapon = false;  // Зброя забрана
+            player.setWeapon(true);
+            this.hasWeapon = false;
             return InteractionResult.WEAPON_FOUND;
         }
         return InteractionResult.NO_MONSTER;

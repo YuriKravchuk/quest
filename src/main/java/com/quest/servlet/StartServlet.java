@@ -23,7 +23,6 @@ public class StartServlet extends HttpServlet {
             }
         }
 
-        // Передаємо список у запит
         request.setAttribute("heroIcons", heroIcons);
 
         request.getRequestDispatcher("/start.jsp").forward(request, response);

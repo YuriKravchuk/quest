@@ -4,7 +4,7 @@ public class Monster {
     private int health;
 
     public Monster() {
-        this.health = 100;  // Початкове здоров'я монстра
+        this.health = 100;
     }
 
     public int getHealth() {

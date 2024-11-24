@@ -43,10 +43,10 @@ public class TreeLocation extends Location {
 
     // Метод для перевірки видимості виходу
     private boolean isExitVisible(Player player) {
-        int playerX = player.getX(); // припустимо, що гравець має метод getX()
-        int playerY = player.getY(); // припустимо, що гравець має метод getY()
+        int playerX = player.getX();
+        int playerY = player.getY();
 
-        int distance = Math.abs(playerX - exitX) + Math.abs(playerY - exitY); // мангеттенська відстань
+        int distance = Math.abs(playerX - exitX) + Math.abs(playerY - exitY);
 
         return distance <= 5;
     }

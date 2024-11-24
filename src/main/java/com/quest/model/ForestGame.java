@@ -75,7 +75,7 @@ public class ForestGame {
         forest[x][y] = location;
     }
 
-    // Розміщення різних об'єктів у лісі
+    // Розміщення об'єктів у лісі
     private void placeObjectsInForest(int numberOfTrees, int numberOfCaves, int numberOfPeople) {
         for (int i = 0; i < numberOfTrees; i++) {
             placeRandomObject(new TreeLocation(exitX,exitY));

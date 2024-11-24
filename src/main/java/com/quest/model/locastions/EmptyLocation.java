@@ -62,7 +62,7 @@ public class EmptyLocation extends Location {
     public EmptyLocation() {
         this.type = ObjectType.EMPTY;
         Random rand = new Random();
-        int chance = rand.nextInt(100); // Генерує число від 0 до 99
+        int chance = rand.nextInt(100);
         if (chance < 15) {
             this.hasBerry = true;
         } else if (chance >=15 && chance < 25) {

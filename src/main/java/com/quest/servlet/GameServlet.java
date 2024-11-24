@@ -105,7 +105,6 @@ public class GameServlet extends HttpServlet {
         doGet(request, response);
     }
 
-    // Обробка запиту на початок нової гри
     @Override
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();

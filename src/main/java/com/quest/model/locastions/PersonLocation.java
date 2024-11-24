@@ -66,15 +66,14 @@ public class PersonLocation extends Location {
             player.setWeapon(true);
             player.setTreasure(false);
             this.hasWeapon = false;
-            return InteractionResult.BUY_WEAPON;  // Гравець отримує зброю
+            return InteractionResult.BUY_WEAPON;
         } else if (player.hasWeapon()) {
             return InteractionResult.HAVE_WEAPON_ALREADY; // Вже має зброю
         } else {
-            return InteractionResult.NO_MONEY; // У людини немає зброї
+            return InteractionResult.NO_MONEY;
         }
     }
 
-    // Метод для отримання виходу від людини, якщо він його знає
     public InteractionResult giveExitDirection(Player player) {
         if (knowsExit) {
             setExitDirection(player);

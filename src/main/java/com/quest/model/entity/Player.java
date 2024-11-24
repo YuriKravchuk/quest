@@ -8,6 +8,12 @@ public class Player {
     private boolean hasWeapon;
     private boolean hasPrinces = false;
     private int x;
+    private int y;
+    private boolean inTree;
+    private boolean inCave;
+    private boolean isTalking;
+    private String heroIcon;
+    private String heroName;
 
     public void setHealth(int health) {
         this.health = health;
@@ -20,13 +26,6 @@ public class Player {
     public void setY(int y) {
         this.y = y;
     }
-
-    private int y;
-    private boolean inTree; // Додайте поле для дерев
-    private boolean inCave; // Додайте поле для печери
-    private boolean isTalking;
-    private String heroIcon;
-    private String heroName;
 
     public String getHeroName() {
         return heroName;
