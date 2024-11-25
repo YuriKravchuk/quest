@@ -86,7 +86,7 @@
       <c:if test="${game.getPlayer().isHasPrinces()}">Врятована принцеса 👸🏼</c:if>
     </p>
 
-    <c:if test="${!game.getPlayer().isHasPrinces()}">
+    <c:if test="${!game.getPlayer().isHasPrinces()} && ${param.result == 'win'}">
       <button class="button button-back" onclick="window.history.back();">Врятувати принцесу</button>
     </c:if>
 
